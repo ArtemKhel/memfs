@@ -469,7 +469,7 @@ mod tests {
         let read_task = tokio::spawn(async move {
             let mut results = Vec::new();
             for _ in 0..10 {
-                let content = fs_reader.read("/test.txt", 0, usize::MAX).await.unwrap();
+                let content = fs_reader.read("/test.txt", 0, 100).await.unwrap();
                 results.push(content);
                 tokio::time::sleep(tokio::time::Duration::from_millis(1)).await;
             }
