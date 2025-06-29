@@ -17,16 +17,16 @@ impl fmt::Display for FileSystemError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             FileSystemError::FileNotFound(path) => {
-                write!(f, "File not found: {}", path)
+                write!(f, "File not found: {path}")
             }
             FileSystemError::InvalidPath(path) => {
-                write!(f, "Invalid path: {}", path)
+                write!(f, "Invalid path: {path}")
             }
             FileSystemError::ReadError(msg) => {
-                write!(f, "Read error: {}", msg)
+                write!(f, "Read error: {msg}")
             }
             FileSystemError::WriteError(msg) => {
-                write!(f, "Write error: {}", msg)
+                write!(f, "Write error: {msg}")
             }
         }
     }
